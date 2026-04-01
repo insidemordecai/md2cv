@@ -1,0 +1,243 @@
+ :root {
+   --accent: #009bad;
+   --text: #222;
+   --muted: #555;
+   --muted-2: #444;
+   --subtle: #777;
+   --border: #ddd;
+   --page-bg: #f0f0f0;
+   --paper: #fff;
+
+   --body-size: 10pt;
+   --small-size: 9pt;
+   --content-size: 9.5pt;
+   --company-size: 10.5pt;
+   --title-size: 11pt;
+   --name-size: 24pt;
+ }
+
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ html,
+ body {
+   height: 100%;
+ }
+
+ body {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+   font-size: var(--body-size);
+   line-height: 1.3;
+   color: var(--text);
+   background: var(--page-bg);
+ }
+
+ .page {
+   max-width: 800px;
+   margin: 24px auto;
+   padding: 28px 36px;
+   background: var(--paper);
+   border: 1px solid var(--border);
+ }
+
+ .header {
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+   text-align: center;
+   border-bottom: 2px solid var(--accent);
+ }
+
+ .name {
+   font-size: var(--name-size);
+   font-weight: 700;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+ }
+
+ .tagline {
+   margin-top: 2px;
+   font-size: var(--small-size);
+   letter-spacing: 0.18em;
+   text-transform: uppercase;
+   color: var(--subtle);
+ }
+
+ .contact {
+   margin-top: 6px;
+   font-size: var(--content-size);
+   color: var(--muted-2);
+ }
+
+ .contact span {
+   margin-right: 4px;
+ }
+
+ .section {
+   margin-top: 8px;
+ }
+
+ .section-title {
+   margin-bottom: 4px;
+   padding-bottom: 2px;
+   font-size: var(--title-size);
+   font-weight: 700;
+   letter-spacing: 0.18em;
+   text-transform: uppercase;
+   color: var(--accent);
+   border-bottom: 1px solid var(--border);
+ }
+
+ .intro,
+ .item-role,
+ .item-bullets,
+ .contact {
+   font-size: var(--content-size);
+ }
+
+ .intro {
+   line-height: 1.3;
+ }
+
+ .item {
+   margin-top: 5px;
+ }
+
+ .item-top,
+ .sub-role-header,
+ .skills-grid {
+   display: flex;
+ }
+
+ .item-top,
+ .sub-role-header {
+   justify-content: space-between;
+   gap: 16px;
+ }
+
+ .sub-role-header {
+   align-items: baseline;
+ }
+
+ .item-company,
+ .label {
+   font-weight: 600;
+ }
+
+ .item-company {
+   font-size: var(--company-size);
+ }
+
+ .item-role {
+   margin-top: 1px;
+ }
+
+ .sub-role {
+   margin-top: 3px;
+ }
+
+ .sub-role-dates,
+ .item-meta {
+   font-size: var(--small-size);
+   color: var(--muted);
+ }
+
+ .item-meta {
+   text-align: right;
+ }
+
+ .brand-location {
+   color: var(--accent);
+ }
+
+ .item-bullets {
+   margin-top: 1px;
+   margin-left: 16px;
+ }
+
+ .item-bullets li {
+   margin-bottom: 1px;
+ }
+
+ .skills-grid {
+   gap: 32px;
+   margin-top: 4px;
+ }
+
+ .skills-grid>div,
+ .referee-extra {
+   font-size: var(--body-size);
+ }
+
+ .skills-grid>div {
+   flex: 1;
+ }
+
+ .referee-extra {
+   margin-top: 6px;
+ }
+
+ a,
+ .ref-phone,
+ .ref-email,
+ .contact-link {
+   text-decoration: none;
+ }
+
+ a,
+ .ref-phone,
+ .ref-email {
+   color: var(--text);
+ }
+
+ .contact-link {
+   color: var(--muted-2);
+ }
+
+ a:hover,
+ .ref-phone:hover,
+ .ref-email:hover,
+ .contact-link:hover {
+   text-decoration: underline;
+ }
+
+ @media print {
+   @page {
+     size: A4;
+     margin: 0.5in;
+   }
+
+   body {
+     background: var(--paper);
+   }
+
+   .page {
+     max-width: 100%;
+     margin: 0;
+     padding: 0;
+     border: none;
+   }
+
+   a {
+     color: #000;
+     text-decoration: none;
+   }
+
+   .section,
+   .section-certifications {
+     break-inside: auto;
+     page-break-inside: auto;
+   }
+
+   .item,
+   .sub-role {
+     break-inside: avoid;
+     page-break-inside: avoid;
+   }
+
+   .header {
+     page-break-after: avoid;
+   }
+ }
