@@ -1,27 +1,59 @@
 #!/usr/bin/env python3
-
 from pathlib import Path
 import re
 import yaml
 from markdown import markdown
 from jinja2 import Environment, FileSystemLoader
 
-INPUT_FILE = "cv.md"
+SCRIPT_DIR = Path(__file__).resolve().parent
+PARENT_DIR = SCRIPT_DIR.parent
+
 TEMPLATE_FILE = "template.html"
-OUTPUT_DIR = Path("output")
-OUTPUT_FILE = OUTPUT_DIR / "cv.html"
+
+LOCAL_INPUT_FILE = SCRIPT_DIR / "cv.md"
+PARENT_INPUT_FILE = PARENT_DIR / "cv.md"
+
+LOCAL_OUTPUT_DIR = SCRIPT_DIR / "output"
+PARENT_OUTPUT_DIR = PARENT_DIR / "output"
+
+LOCAL_OUTPUT_FILE = LOCAL_OUTPUT_DIR / "cv.html"
+PARENT_OUTPUT_FILE = PARENT_OUTPUT_DIR / "cv.html"
+
+
+def resolve_paths():
+    use_parent = PARENT_INPUT_FILE.exists()
+
+    input_file = PARENT_INPUT_FILE if use_parent else LOCAL_INPUT_FILE
+    output_dir = PARENT_OUTPUT_DIR if use_parent else LOCAL_OUTPUT_DIR
+    output_file = PARENT_OUTPUT_FILE if use_parent else LOCAL_OUTPUT_FILE
+
+    custom_css = None
+    if use_parent:
+        parent_custom = PARENT_DIR / "custom.css"
+        if parent_custom.exists():
+            custom_css = parent_custom
+    else:
+        local_custom = SCRIPT_DIR / "custom.css"
+        if local_custom.exists():
+            custom_css = local_custom
+
+    output_dir.mkdir(exist_ok=True)
+
+    return {
+        "input_file": input_file,
+        "output_file": output_file,
+        "custom_css": custom_css,
+    }
 
 
 def parse_markdown_file(file_path):
     content = Path(file_path).read_text(encoding="utf-8")
-
     match = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", content, re.DOTALL)
     if not match:
         raise ValueError("No valid YAML front matter found. Make sure cv.md starts with ---")
 
     front_matter_raw = match.group(1)
     body = match.group(2)
-
     metadata = yaml.safe_load(front_matter_raw) or {}
     return metadata, body
 
@@ -98,7 +130,6 @@ def resolve_section_renderer(section_id, metadata):
 
 def resolve_section_visibility(section_id, metadata):
     visibility = metadata.get("section_visibility", {}) or {}
-
     legacy_flags = {
         "projects": metadata.get("show_projects", True),
         "certifications": metadata.get("show_certifications", True),
@@ -107,10 +138,8 @@ def resolve_section_visibility(section_id, metadata):
 
     if section_id in visibility:
         return bool(visibility[section_id])
-
     if section_id in legacy_flags:
         return legacy_flags[section_id]
-
     return True
 
 
@@ -119,35 +148,30 @@ def resolve_header_links(metadata):
         return metadata["header_links"]
 
     links = []
-
     if metadata.get("phone_display") and metadata.get("phone_href"):
         links.append({
             "label": metadata["phone_display"],
             "href": metadata["phone_href"],
-            "class": "contact-link"
+            "class": "contact-link",
         })
-
     if metadata.get("email") and metadata.get("email_href"):
         links.append({
             "label": metadata["email"],
             "href": metadata["email_href"],
-            "class": "contact-link"
+            "class": "contact-link",
         })
-
     if metadata.get("website") and metadata.get("website_href"):
         links.append({
             "label": metadata["website"],
             "href": metadata["website_href"],
-            "class": "contact-link"
+            "class": "contact-link",
         })
-
     if metadata.get("linkedin") and metadata.get("linkedin_href"):
         links.append({
             "label": metadata["linkedin"],
             "href": metadata["linkedin_href"],
-            "class": "contact-link"
+            "class": "contact-link",
         })
-
     return links
 
 
@@ -167,15 +191,18 @@ def render_bullets(bullets):
 
 def render_single_item(company, role="", location="", dates="", bullets=None):
     bullets = bullets or []
+    role_html = f'<div class="item-role"><em>{role}</em></div>' if role else ""
+    location_html = f'<div class="item-location brand-location">{location}</div>' if location else ""
+    dates_html = f'<div class="item-dates">{dates}</div>' if dates else ""
 
     item_top = f'''<div class="item-top">
     <div>
       <div class="item-company">{company}</div>
-      <div class="item-role"><em>{role}</em></div>
+      {role_html}
     </div>
     <div class="item-meta">
-      {f'<div class="item-location brand-location">{location}</div>' if location else ''}
-      {f'<div class="item-dates">{dates}</div>' if dates else ''}
+      {location_html}
+      {dates_html}
     </div>
   </div>'''
 
@@ -187,7 +214,6 @@ def render_single_item(company, role="", location="", dates="", bullets=None):
 
 def render_experience_or_education(section_text):
     lines = [line.rstrip() for line in section_text.splitlines()]
-
     items = []
     current_item = None
     current_subrole = None
@@ -207,7 +233,6 @@ def render_experience_or_education(section_text):
 
     for raw_line in lines:
         line = raw_line.strip()
-
         if not line:
             continue
 
@@ -219,7 +244,7 @@ def render_experience_or_education(section_text):
                 "role": "",
                 "dates": "",
                 "bullets": [],
-                "sub_roles": []
+                "sub_roles": [],
             }
             continue
 
@@ -232,7 +257,7 @@ def render_experience_or_education(section_text):
                 "role": line[5:].strip(),
                 "location": "",
                 "dates": "",
-                "bullets": []
+                "bullets": [],
             }
             continue
 
@@ -262,66 +287,56 @@ def render_experience_or_education(section_text):
 
         if current_subrole is None and not current_item["role"]:
             current_item["role"] = line.strip("*").strip()
-            continue
 
     flush_item()
 
     html_parts = []
-
     for item in items:
         if len(item["sub_roles"]) > 1:
+            location_html = f'<div class="item-location brand-location">{item["location"]}</div>' if item["location"] else ''
             html = f'''<div class="item">
   <div class="item-top">
     <div>
       <div class="item-company">{item["company"]}</div>
     </div>
     <div class="item-meta">
-      {f'<div class="item-location brand-location">{item["location"]}</div>' if item["location"] else ''}
+      {location_html}
     </div>
   </div>'''
-
             for sr in item["sub_roles"]:
-                bullets_html = render_bullets(sr["bullets"])
                 html += f'''
   <div class="sub-role">
     <div class="sub-role-header">
       <div class="item-role"><em>{sr["role"]}</em></div>
       <div class="sub-role-dates">{sr["dates"]}</div>
     </div>
-    {bullets_html}
+    {render_bullets(sr["bullets"])}
   </div>'''
             html += "\n</div>"
             html_parts.append(html)
-
         elif len(item["sub_roles"]) == 1:
             sr = item["sub_roles"][0]
-            html_parts.append(
-                render_single_item(
-                    company=item["company"],
-                    role=sr["role"],
-                    location=sr["location"] or item["location"],
-                    dates=sr["dates"] or item["dates"],
-                    bullets=sr["bullets"],
-                )
-            )
-
+            html_parts.append(render_single_item(
+                item["company"],
+                sr["role"],
+                sr["location"] or item["location"],
+                sr["dates"] or item["dates"],
+                sr["bullets"]
+            ))
         else:
-            html_parts.append(
-                render_single_item(
-                    company=item["company"],
-                    role=item["role"],
-                    location=item["location"],
-                    dates=item["dates"],
-                    bullets=item["bullets"],
-                )
-            )
+            html_parts.append(render_single_item(
+                item["company"],
+                item["role"],
+                item["location"],
+                item["dates"],
+                item["bullets"]
+            ))
 
     return "\n".join(html_parts).strip()
 
 
 def render_projects(section_text):
     lines = [line.rstrip() for line in section_text.splitlines()]
-
     items = []
     current_item = None
 
@@ -333,7 +348,6 @@ def render_projects(section_text):
 
     for raw_line in lines:
         line = raw_line.strip()
-
         if not line:
             continue
 
@@ -344,7 +358,7 @@ def render_projects(section_text):
                 "role": "",
                 "location": "",
                 "dates": "",
-                "bullets": []
+                "bullets": [],
             }
             continue
 
@@ -372,18 +386,14 @@ def render_projects(section_text):
     flush_item()
 
     html_parts = []
-
     for item in items:
-        html_parts.append(
-            render_single_item(
-                company=item["company"],
-                role=item["role"],
-                location=item["location"],
-                dates=item["dates"],
-                bullets=item["bullets"],
-            )
-        )
-
+        html_parts.append(render_single_item(
+            item["company"],
+            item["role"],
+            item["location"],
+            item["dates"],
+            item["bullets"]
+        ))
     return "\n".join(html_parts).strip()
 
 
@@ -393,13 +403,11 @@ def render_simple_bullets(section_text):
         stripped = line.strip()
         if stripped.startswith("- "):
             bullets.append(stripped[2:].strip())
-
     return render_bullets(bullets).strip()
 
 
 def render_skills(section_text):
     html_parts = []
-
     for raw_line in section_text.splitlines():
         line = raw_line.strip()
         if not line.startswith("- "):
@@ -407,7 +415,6 @@ def render_skills(section_text):
 
         content = line[2:].strip()
         m = re.match(r"^\*\*(.+?)\*\*\s*:\s*(.+)$", content)
-
         if m:
             label = m.group(1).strip()
             value = m.group(2).strip()
@@ -415,7 +422,6 @@ def render_skills(section_text):
         else:
             fallback = render_inline_markdown(content)
             html_parts.append(f"<p>{fallback}</p>")
-
     return "\n".join(html_parts).strip()
 
 
@@ -430,14 +436,12 @@ def render_referees(section_text):
 
         name = lines[0].replace("### ", "").strip()
         role = lines[1] if len(lines) > 1 else ""
-
         phone = ""
         email = ""
 
         for line in lines[2:]:
             phone_match = re.search(r'\[([^\]]+)\]\((tel:[^)]+)\)', line)
             email_match = re.search(r'\[([^\]]+)\]\((mailto:[^)]+)\)', line)
-
             if phone_match:
                 phone = f'<a class="ref-phone" href="{phone_match.group(2)}">{phone_match.group(1)}</a>'
             if email_match:
@@ -463,7 +467,7 @@ def render_referees(section_text):
   </div>
 </div>'''.strip()
 
-    html = '''<div class="skills-grid">'''
+    html = '<div class="skills-grid">'
     for ref in referees[:2]:
         html += f'''
   <div>
@@ -489,7 +493,6 @@ def render_referees(section_text):
 
 def parse_sections(body, metadata):
     section_list = []
-
     lines = body.splitlines()
     if lines and lines[0].startswith("# "):
         body = "\n".join(lines[1:]).lstrip()
@@ -499,7 +502,6 @@ def parse_sections(body, metadata):
     for i in range(1, len(parts), 2):
         raw_title = parts[i].strip()
         raw_content = parts[i + 1].strip()
-
         if not raw_content:
             continue
 
@@ -533,9 +535,9 @@ def parse_sections(body, metadata):
 
 
 def build():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    paths = resolve_paths()
 
-    metadata, body = parse_markdown_file(INPUT_FILE)
+    metadata, body = parse_markdown_file(paths["input_file"])
 
     strip_comments = metadata.get("build", {}).get("strip_comments", True)
     if strip_comments:
@@ -543,27 +545,25 @@ def build():
 
     sections = parse_sections(body, metadata)
     header_links = resolve_header_links(metadata)
-
     name = metadata.get("name", "")
 
     filtered_sections = [
-        section for section in sections
-        if resolve_section_visibility(section["id"], metadata)
+        section for section in sections if resolve_section_visibility(section["id"], metadata)
     ]
 
-    env = Environment(loader=FileSystemLoader("."), autoescape=False)
+    env = Environment(loader=FileSystemLoader(str(SCRIPT_DIR)), autoescape=False)
     template = env.get_template(TEMPLATE_FILE)
 
     rendered = template.render(
         name=name,
         header_links=header_links,
         sections=filtered_sections,
-        stylesheet_path=metadata.get("stylesheet", "../style.css"),
+        stylesheet_path=metadata.get("stylesheet", (SCRIPT_DIR / "style.css").resolve().as_uri()),
+        custom_stylesheet_path=paths["custom_css"].resolve().as_uri() if paths["custom_css"] else None,
     )
 
-    OUTPUT_FILE.write_text(rendered, encoding="utf-8")
-
-    print(f"Generated: {OUTPUT_FILE}")
+    paths["output_file"].write_text(rendered, encoding="utf-8")
+    print(f"Generated: {paths['output_file']}")
     print("Open output/cv.html in a browser and print to PDF.")
 
 
