@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ name }} - CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ stylesheet_path }}" />
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="name">{{ name }}</h1>
+      <div class="contact">
+        {% for link in header_links %}
+          <span><a class="{{ link.class or 'contact-link' }}" href="{{ link.href }}">{{ link.label }}</a></span>{% if not loop.last %}<span> • </span>{% endif %}
+        {% endfor %}
+      </div>
+    </header>
+
+    {% for section in sections %}
+    <section class="{{ section.classes }}{% if section.id == 'certifications' %} section-certifications{% endif %}">
+      <h2 class="section-title">{{ section.title }}</h2>
+      {% if section.id == "intro" -%}
+      <div class="intro">{{ section.html | safe }}</div>
+      {%- else -%}
+      {{- section.html | safe -}}
+      {%- endif %}
+    </section>
+    {% endfor %}
+
+  </div>
+</body>
+</html>
