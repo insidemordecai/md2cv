@@ -8,7 +8,7 @@ This setup works on macOS 26.4, I cannot ensure it will work on other environmen
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
+source ~/venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
