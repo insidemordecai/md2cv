@@ -120,6 +120,14 @@ Detail-oriented professional with experience across operations, customer service
 - Introduction to Project Coordination — Training Platform, 2022  
 - Customer Service Fundamentals — Online Course, 2021  
 
+## Honors & Awards
+
+- Sample recognition entry.
+
+## Publications
+
+- Sample publication entry.
+
 ## Skills & Interests
 
 - **Core Skills:** organization, time management, communication  
@@ -143,11 +151,3 @@ Store Supervisor
 Lecturer  
 [+61 400 666 777](tel:+61400666777)  
 [riley.chen@example.org](mailto:riley.chen@example.org)
-
-## Honors & Awards
-
-- Sample recognition entry.
-
-## Publications
-
-- Sample publication entry.
