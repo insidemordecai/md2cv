@@ -18,18 +18,6 @@ The project takes Markdown content from `cv.md` and generates a styled HTML CV (
 The generated CV is written to `output/cv.html`, which you can open in a browser and print to PDF.
 You can open that file in a browser and print it to PDF.
 
-```text
-md2cv
-├── build.py
-├── cv.md
-├── output
-│   └── cv.html
-├── README.md
-├── requirements.txt
-├── style.css
-└── template.html
-```
-
 ## Prerequisites
 
 - [Python 3](https://www.python.org/downloads/) must be installed and available on your PATH (tick this option when installing Python on Windows).
