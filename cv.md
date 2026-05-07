@@ -49,7 +49,7 @@ section_visibility:
 
 ## Introduction
 
-Detail-oriented professional with experience across operations, customer service, and administrative coordination. Known for staying organized, handling varied responsibilities, and adapting quickly to new environments. Interested in improving processes and supporting team efficiency.
+Detail-oriented professional with experience across operations, customer service, and administrative coordination. Known for staying organized, handling varied responsibilities, and adapting quickly to new environments.
 
 ## Work Experience
 
@@ -61,7 +61,6 @@ Detail-oriented professional with experience across operations, customer service
 
 - Managed daily scheduling and internal communications across multiple teams.
 - Tracked shipments and updated records to ensure accurate reporting.
-- Assisted with process improvements to reduce delays in routine operations.
 
 #### Administrative Assistant
 :dates: Jan 2023 – Feb 2024
@@ -76,7 +75,6 @@ Detail-oriented professional with experience across operations, customer service
 
 - Assisted customers with purchases and general inquiries.
 - Handled point-of-sale transactions and maintained store presentation.
-- Contributed to stock organization and inventory checks.
 
 ### City Events Collective
 #### Event Support Staff
@@ -84,7 +82,6 @@ Detail-oriented professional with experience across operations, customer service
 :dates: Feb 2020 – May 2021
 
 - Supported setup and coordination of small to mid-sized events.
-- Assisted attendees and handled on-site logistics during events.
 
 ## Education
 
