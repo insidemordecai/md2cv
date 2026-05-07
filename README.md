@@ -53,6 +53,20 @@ source ~/venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
+### Windows (PowerShell)
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+> If script execution is disabled, run this first:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+> Then re-run the activation command.
+
 ## Build
 
 Run:
@@ -142,7 +156,7 @@ xdg-open output/cv.html
 On Windows PowerShell, use:
 
 ```powershell
-start output/cv.html
+start .\output\cv.html
 ```
 
 ## Subtree behaviour
