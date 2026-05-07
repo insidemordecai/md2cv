@@ -44,7 +44,7 @@ jobs:
               page = browser.new_page(viewport={'width': 794, 'height': 1123})
               page.goto('file://${{ github.workspace }}/output/cv.html', wait_until='load')
               page.wait_for_timeout(500)
-              page.screenshot(path='docs/preview.webp', type='webp', full_page=False)
+              page.screenshot(path='docs/preview.png', type='png', full_page=False)
               browser.close()
           "
 
@@ -52,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/preview.webp
+          git add docs/preview.png
           git diff --staged --quiet || git commit -m "chore: update CV preview [skip ci]"
           git push
