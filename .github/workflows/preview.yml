@@ -1,0 +1,57 @@
+name: Generate CV Preview
+
+on:
+  push:
+    paths:
+      - cv.md
+      - style.css
+      - build.py
+      - template.html
+
+permissions:
+  contents: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Build CV
+        run: python build.py
+
+      - name: Screenshot CV
+        run: |
+          python -c "
+          from playwright.sync_api import sync_playwright
+          import os
+          os.makedirs('docs', exist_ok=True)
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page(viewport={'width': 794, 'height': 1123})
+              page.goto('file://${{ github.workspace }}/output/cv.html', wait_until='load')
+              page.wait_for_timeout(500)
+              page.screenshot(path='docs/preview.webp', type='webp', full_page=False)
+              browser.close()
+          "
+
+      - name: Commit preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/preview.webp
+          git diff --staged --quiet || git commit -m "chore: update CV preview [skip ci]"
+          git push

@@ -5,6 +5,8 @@ MD2CV is a small Markdown-to-HTML CV generator.
 It converts `cv.md` into a printable HTML CV using a fixed template and stylesheet.
 It works both as a standalone repository and as an engine embedded inside another repository via Git subtree.
 
+![CV Preview](docs/preview.webp)
+
 ## Overview
 
 The project takes Markdown content from `cv.md` and generates a styled HTML CV (`output/cv.html`) using:
