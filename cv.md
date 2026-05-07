@@ -108,12 +108,6 @@ Detail-oriented professional with experience across operations, customer service
 - Created a simple spreadsheet-based system for tracking stock levels.
 - Improved visibility of inventory across teams.
 
-### Event Planner Template
-#### Organizational Resource
-:dates: 2022
-- Designed a reusable template for planning and managing event logistics.
-- Included checklists, timelines, and resource tracking.
-
 ## Certifications
 
 - Workplace Communication Essentials — Online Course, 2023  
