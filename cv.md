@@ -151,4 +151,3 @@ Store Supervisor
 Lecturer  
 [+61 400 666 777](tel:+61400666777)  
 [riley.chen@example.org](mailto:riley.chen@example.org)
-
