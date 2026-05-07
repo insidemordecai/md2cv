@@ -25,6 +25,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install Inter font and set as default sans-serif
+        run: |
+          mkdir -p ~/.fonts ~/.config/fontconfig
+          curl -L "https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip" -o inter.zip
+          unzip inter.zip "*.ttf" -d ~/.fonts
+          cat > ~/.config/fontconfig/fonts.conf <<'XML'
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <alias>
+              <family>sans-serif</family>
+              <prefer><family>Inter</family></prefer>
+            </alias>
+          </fontconfig>
+          XML
+          fc-cache -fv
+
       - name: Install Playwright + Chromium
         run: |
           pip install playwright
