@@ -21,6 +21,18 @@ output/cv.html
 
 You can open that file in a browser and print it to PDF.
 
+## Prerequisites
+
+- [Python 3](https://www.python.org/downloads/) must be installed and available on your PATH (tick this option when installing Python on Windows).
+
+To verify, run:
+
+```bash
+python3 --version
+```
+
+On Windows, you may need to use `python` instead of `python3`.
+
 ## Repository layout
 
 ```text
