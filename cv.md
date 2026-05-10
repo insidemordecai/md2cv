@@ -129,16 +129,16 @@ Detail-oriented professional with experience across operations, customer service
 ## Referees
 
 ### Taylor Brooks  
-Operations Manager  
+Operations Manager, BlueWave Logistics
 [+61 400 222 333](tel:+61400222333)  
 [taylor.brooks@example.org](mailto:taylor.brooks@example.org)
 
 ### Jordan Ellis  
-Store Supervisor  
+Store Supervisor, Urban Retail Group 
 [+61 400 444 555](tel:+61400444555)  
 [jordan.ellis@example.org](mailto:jordan.ellis@example.org)
 
 ### Riley Chen  
-Lecturer  
+Lecturer, Southern Coast University
 [+61 400 666 777](tel:+61400666777)  
 [riley.chen@example.org](mailto:riley.chen@example.org)
