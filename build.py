@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from pathlib import Path
 import re
+from pathlib import Path
+
 import yaml
-from markdown import markdown
 from jinja2 import Environment, FileSystemLoader
+from markdown import markdown
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = SCRIPT_DIR.parent
