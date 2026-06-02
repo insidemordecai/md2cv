@@ -141,15 +141,19 @@
  .sub-role-dates,
  .item-meta {
    font-size: var(--small-size);
-   color: var(--muted);
+ }
+
+ .sub-role-dates {
+   color: var(--accent);
  }
 
  .item-meta {
+   color: var(--accent);
    text-align: right;
  }
 
  .brand-location {
-   color: var(--accent);
+   color: var(--muted);
  }
 
  .item-bullets {
