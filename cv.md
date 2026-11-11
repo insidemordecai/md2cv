@@ -155,7 +155,9 @@ Delivery Manager, Oracle Kenya
 [+254 700 000 102](tel:+254700000102)  
 [david.mutua@example.org](mailto:david.mutua@example.org)
 
+<!--
 ### Dr. Alice Nyambura  
 Lecturer, Strathmore University  
 [+254 700 000 103](tel:+254700000103)  
 [alice.nyambura@example.org](mailto:alice.nyambura@example.org)
+-->
