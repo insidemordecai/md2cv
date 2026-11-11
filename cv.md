@@ -95,19 +95,16 @@ Customer experience and project coordination professional with eight years' expe
 ## Education
 
 ### Strathmore University
-#### Bachelor of Business Information Technology (BBIT)
+#### Bachelor of Business Information Technology (BBIT), Second Class Honours (Upper Division)
 :location: Nairobi, Kenya
 :dates: 2014 – 2018
 
-- Second Class Honours (Upper Division).
-- Covered business analysis, information systems, project management, and organisational behaviour.
+- Relevant coursework: business analysis, information systems, project management, and database design.
 
 ### Kisumu Girls High School
-#### Kenya Certificate of Secondary Education (KCSE)
+#### Kenya Certificate of Secondary Education (KCSE), Mean Grade B+
 :location: Kisumu, Kenya
 :dates: 2010 – 2013
-
-- Mean Grade: B+.
 
 ## Projects
 
