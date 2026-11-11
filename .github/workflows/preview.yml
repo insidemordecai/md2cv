@@ -7,6 +7,8 @@ on:
       - style.css
       - build.py
       - template.html
+      - .github/workflows/preview.yml
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -61,7 +63,7 @@ jobs:
               page = browser.new_page(viewport={'width': 794, 'height': 1123})
               page.goto('file://${{ github.workspace }}/output/cv.html', wait_until='load')
               page.wait_for_timeout(500)
-              page.screenshot(path='docs/preview.png', type='png', full_page=False)
+              page.screenshot(path='docs/preview.png', type='png', full_page=True)
               browser.close()
           "
 
