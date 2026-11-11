@@ -46,7 +46,7 @@ section_visibility:
 
 ## Professional Summary
 
-Customer experience and project coordination professional with eight years' experience across telecommunications, enterprise technology, and internet service provision. Skilled in resolving complex escalations, coordinating cross-functional projects, and turning customer feedback into process improvements. Experienced working with teams and clients in Nairobi, Mombasa, Kisumu, and Laikipia County, and open to relocation across Kenya.
+Customer experience and project coordination professional with eight years' experience across telecommunications, enterprise technology, and internet service provision. Skilled in resolving complex escalations, coordinating cross-functional projects, and turning customer feedback into process improvements, with experience across Nairobi, Mombasa, Kisumu, and Laikipia County, and open to relocation across Kenya.
 
 ## Professional Experience
 
@@ -59,13 +59,11 @@ Customer experience and project coordination professional with eight years' expe
 - Lead a team of eight customer experience advisors handling enterprise and M-PESA merchant escalations, consistently meeting 95% of service-level targets.
 - Analyse around 12,000 monthly customer interactions in Power BI and present insights that reduced repeat complaints by 18%.
 - Coordinate with Care, M-PESA Africa, and dealer networks across 47 counties during product launches and service changes.
-- Maintain process documentation and train staff on new Salesforce Service Cloud workflows.
 
 #### Customer Experience Officer
 :dates: Aug 2021 – Dec 2023
 
-- Resolved Tier 2 escalations for enterprise clients in banking, agri-tech, and county government.
-- Processed SIM registration compliance cases and supported dealer audits in Nairobi and the Coast region.
+- Resolved Tier 2 escalations for enterprise clients in banking, agri-tech, and county government, and processed SIM registration compliance cases.
 - Exceeded the internal quality assurance target with a 92% average score across call, email, and chat channels.
 
 ### Oracle Kenya
@@ -76,7 +74,6 @@ Customer experience and project coordination professional with eight years' expe
 - Coordinated Oracle Cloud Infrastructure and NetSuite deployments for six clients in financial services and the public sector.
 - Owned project schedules, risk and issue logs, and weekly status reports for client and internal stakeholders.
 - Supported a county revenue-collection system pilot in Kisumu and Kakamega, delivered on schedule and within budget.
-- Followed up procurement, licensing, and vendor documentation to keep engagements compliant and on track.
 
 ### Mawingu Networks
 #### Customer Operations Associate
@@ -86,7 +83,6 @@ Customer experience and project coordination professional with eight years' expe
 - Supported customer onboarding, billing queries, and field installations for underserved towns in Laikipia, Nyeri, and Meru.
 - Maintained a 90% first-response compliance rate across phone, WhatsApp, and walk-in support channels.
 - Built a simple installation tracker that reduced the field backlog by 25% within three months.
-- Trained new dealers and agents on service plans, escalation paths, and customer handover procedures.
 
 ### SwahiliPot Hub
 #### Digital Skills & Events Intern
@@ -95,7 +91,6 @@ Customer experience and project coordination professional with eight years' expe
 
 - Assisted with digital skills workshops for more than 120 young people and maintained attendance and impact records.
 - Supported logistics for hackathons, community meetups, and partner visits at the hub.
-- Helped prepare weekly progress reports for programme partners and mentors.
 
 ## Education
 
@@ -149,7 +144,6 @@ Customer experience and project coordination professional with eight years' expe
 
 - **Core Skills:** customer experience management, project coordination, stakeholder engagement, process improvement, data analysis, team supervision
 - **Tools:** Salesforce Service Cloud, Oracle NetSuite, Power BI, Jira, Asana, Microsoft 365, Google Workspace
-- **Other:** escalation management, reporting, record keeping, dealer and vendor coordination
 - **Interests:** mentorship, community volunteering, hiking, photography
 
 ## Referees
