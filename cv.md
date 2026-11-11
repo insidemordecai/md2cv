@@ -1,29 +1,26 @@
 ---
-name: Casey Rowan
+name: Jane Atieno
 
 header_links:
-  - label: "+61 400 123 789"
-    href: "tel:+61400123789"
+  - label: "+254 700 000 100"
+    href: "tel:+254700000100"
     class: "contact-link"
-  - label: "casey.rowan@example.org"
-    href: "mailto:casey.rowan@example.org"
+  - label: "jane.atieno@example.org"
+    href: "mailto:jane.atieno@example.org"
     class: "contact-link"
-  - label: "caseyrowan.site"
-    href: "https://caseyrowan.site"
-    class: "contact-link"
-  - label: "linkedin.com/in/caseyrowan"
-    href: "https://linkedin.com/in/caseyrowan"
+  - label: "linkedin.com/in/janeatienoexample"
+    href: "https://linkedin.com/in/janeatienoexample"
     class: "contact-link"
 
 section_ids:
-  Introduction: intro
-  Work Experience: experience
+  Professional Summary: intro
+  Professional Experience: experience
   Education: education
   Projects: projects
   Certifications: certifications
   Skills & Interests: skills
   Referees: referees
-  Honors & Awards: honors
+  Honours & Awards: honors
   Publications: publications
 
 section_renderers:
@@ -45,73 +42,102 @@ section_visibility:
   publications: false
 ---
 
-# Casey Rowan
+# Jane Atieno
 
-## Introduction
+## Professional Summary
 
-Detail-oriented professional with experience across operations, customer service, and administrative coordination. Known for staying organized, handling varied responsibilities, and adapting quickly to new environments.
+Customer experience and project coordination professional with eight years' experience across telecommunications, enterprise technology, and internet service provision. Skilled in resolving complex escalations, coordinating cross-functional projects, and turning customer feedback into process improvements. Experienced working with teams and clients in Nairobi, Mombasa, Kisumu, and Laikipia County, and open to relocation across Kenya.
 
-## Work Experience
+## Professional Experience
 
-### BlueWave Logistics
-:location: Brisbane, Australia
+### Safaricom PLC
+:location: Nairobi, Kenya
 
-#### Operations Coordinator
-:dates: Mar 2024 – Present
+#### Senior Customer Experience Officer
+:dates: Jan 2024 – Present
 
-- Managed daily scheduling and internal communications across multiple teams.
-- Tracked shipments and updated records to ensure accurate reporting.
+- Lead a team of eight customer experience advisors handling enterprise and M-PESA merchant escalations, consistently meeting 95% of service-level targets.
+- Analyse around 12,000 monthly customer interactions in Power BI and present insights that reduced repeat complaints by 18%.
+- Coordinate with Care, M-PESA Africa, and dealer networks across 47 counties during product launches and service changes.
+- Maintain process documentation and train staff on new Salesforce Service Cloud workflows.
 
-#### Administrative Assistant
-:dates: Jan 2023 – Feb 2024
+#### Customer Experience Officer
+:dates: Aug 2021 – Dec 2023
 
-- Maintained records, handled correspondence, and supported office workflows.
-- Coordinated meetings and prepared basic reports for internal use.
+- Resolved Tier 2 escalations for enterprise clients in banking, agri-tech, and county government.
+- Processed SIM registration compliance cases and supported dealer audits in Nairobi and the Coast region.
+- Exceeded the internal quality assurance target with a 92% average score across call, email, and chat channels.
 
-### Urban Retail Group
-#### Sales Associate
-:location: Melbourne, Australia
-:dates: Jun 2021 – Dec 2022
+### Oracle Kenya
+#### Project Coordinator, Cloud & Public Sector
+:location: Nairobi, Kenya
+:dates: Mar 2020 – Jul 2021
 
-- Assisted customers with purchases and general inquiries.
-- Handled point-of-sale transactions and maintained store presentation.
+- Coordinated Oracle Cloud Infrastructure and NetSuite deployments for six clients in financial services and the public sector.
+- Owned project schedules, risk and issue logs, and weekly status reports for client and internal stakeholders.
+- Supported a county revenue-collection system pilot in Kisumu and Kakamega, delivered on schedule and within budget.
+- Followed up procurement, licensing, and vendor documentation to keep engagements compliant and on track.
 
-### City Events Collective
-#### Event Support Staff
-:location: Sydney, Australia
-:dates: Feb 2020 – May 2021
+### Mawingu Networks
+#### Customer Operations Associate
+:location: Nanyuki, Laikipia County
+:dates: Jan 2019 – Feb 2020
 
-- Supported setup and coordination of small to mid-sized events.
+- Supported customer onboarding, billing queries, and field installations for underserved towns in Laikipia, Nyeri, and Meru.
+- Maintained a 90% first-response compliance rate across phone, WhatsApp, and walk-in support channels.
+- Built a simple installation tracker that reduced the field backlog by 25% within three months.
+- Trained new dealers and agents on service plans, escalation paths, and customer handover procedures.
+
+### SwahiliPot Hub
+#### Digital Skills & Events Intern
+:location: Mombasa, Kenya
+:dates: 2018
+
+- Assisted with digital skills workshops for more than 120 young people and maintained attendance and impact records.
+- Supported logistics for hackathons, community meetups, and partner visits at the hub.
+- Helped prepare weekly progress reports for programme partners and mentors.
 
 ## Education
 
-### Southern Coast University
-#### Diploma in Business Administration
-:location: Gold Coast, Australia
-:dates: 2019 – 2021
+### Strathmore University
+#### Bachelor of Business Information Technology (BBIT)
+:location: Nairobi, Kenya
+:dates: 2014 – 2018
 
-- Covered fundamentals of management, communication, and organizational practices.
+- Second Class Honours (Upper Division).
+- Covered business analysis, information systems, project management, and organisational behaviour.
 
-### Ridgeview Secondary College
-#### Secondary School Certificate
-:location: Sydney, Australia
-:dates: 2013 – 2018
+### Kisumu Girls High School
+#### Kenya Certificate of Secondary Education (KCSE)
+:location: Kisumu, Kenya
+:dates: 2010 – 2013
+
+- Mean Grade: B+.
 
 ## Projects
 
-### Inventory Tracker
-#### Internal Tool
+### M-PESA Merchant Onboarding Dashboard
+#### Power BI Reporting Tool
+:dates: 2024 – 2025
+
+- Built a Power BI dashboard used by regional teams to track merchant onboarding progress across 12 counties.
+- Reduced manual reporting time from three days to four hours and improved visibility of stalled applications.
+
+### Customer Feedback Insight Digest
+#### Monthly CX Report
 :dates: 2023
-- Created a simple spreadsheet-based system for tracking stock levels.
-- Improved visibility of inventory across teams.
+
+- Synthesised NPS and CSAT feedback into a monthly digest for regional and enterprise teams.
+- Highlighted recurring issues in onboarding and after-sales support, informing three process changes.
 
 ## Certifications
 
-- Workplace Communication Essentials — Online Course, 2023  
-- Introduction to Project Coordination — Training Platform, 2022  
-- Customer Service Fundamentals — Online Course, 2021  
+- Google Project Management Professional Certificate — Coursera, 2023
+- Microsoft Certified: Power BI Data Analyst Associate (PL-300), 2024
+- Salesforce Certified Administrator, 2022
+- ITIL 4 Foundation — PeopleCert, 2021
 
-## Honors & Awards
+## Honours & Awards
 
 - Sample recognition entry.
 
@@ -121,24 +147,24 @@ Detail-oriented professional with experience across operations, customer service
 
 ## Skills & Interests
 
-- **Core Skills:** organization, time management, communication  
-- **Tools:** spreadsheets, basic office software  
-- **Other:** coordination, record keeping, customer interaction  
-- **Interests:** travel, photography, journaling, volunteering  
+- **Core Skills:** customer experience management, project coordination, stakeholder engagement, process improvement, data analysis, team supervision
+- **Tools:** Salesforce Service Cloud, Oracle NetSuite, Power BI, Jira, Asana, Microsoft 365, Google Workspace
+- **Other:** escalation management, reporting, record keeping, dealer and vendor coordination
+- **Interests:** mentorship, community volunteering, hiking, photography
 
 ## Referees
 
-### Taylor Brooks  
-Operations Manager, BlueWave Logistics
-[+61 400 222 333](tel:+61400222333)  
-[taylor.brooks@example.org](mailto:taylor.brooks@example.org)
+### Grace Wanjiku  
+Senior Manager, Customer Experience, Safaricom PLC  
+[+254 700 000 101](tel:+254700000101)  
+[grace.wanjiku@example.org](mailto:grace.wanjiku@example.org)
 
-### Jordan Ellis  
-Store Supervisor, Urban Retail Group 
-[+61 400 444 555](tel:+61400444555)  
-[jordan.ellis@example.org](mailto:jordan.ellis@example.org)
+### David Mutua  
+Delivery Manager, Oracle Kenya  
+[+254 700 000 102](tel:+254700000102)  
+[david.mutua@example.org](mailto:david.mutua@example.org)
 
-### Riley Chen  
-Lecturer, Southern Coast University
-[+61 400 666 777](tel:+61400666777)  
-[riley.chen@example.org](mailto:riley.chen@example.org)
+### Dr. Alice Nyambura  
+Lecturer, Strathmore University  
+[+254 700 000 103](tel:+254700000103)  
+[alice.nyambura@example.org](mailto:alice.nyambura@example.org)
